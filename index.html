@@ -102,8 +102,8 @@
       z-index: 2;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      padding: 64px 72px 64px 96px;
+      justify-content: flex-start;
+      padding: 96px 72px 64px 96px;
     }
 
     .hero-eyebrow {
@@ -263,9 +263,13 @@
 
     .kpi-cell {
       background: var(--bg);
-      padding: 52px 44px;
+      padding: 52px 16px;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: center;
       text-align: center;
     }
 
@@ -298,6 +302,7 @@
       font-size: 13px;
       color: var(--text-35);
       line-height: 1.5;
+      text-align: center;
     }
 
     /* INTERNACIONAL */
@@ -865,7 +870,6 @@
     <div class="hero-rule fade-up d2"></div>
     <p class="hero-tagline fade-up d3">Construindo departamentos do zero, abrindo empresas em quatro continentes e viabilizando projetos por meio de estruturação de negócios e captação de recursos nacionais e internacionais.</p>
     <div class="hero-contacts fade-up d4">
-      <div class="contact-item"><span class="contact-dot"></span>renangb@gmail.com</div>
       <div class="contact-item"><span class="contact-dot"></span>+55 47 99620 4114</div>
       <div class="contact-item"><span class="contact-dot"></span>linkedin.com/in/renanbertoldi</div>
       <div class="contact-item"><span class="contact-dot"></span>Itajaí, SC — Brasil</div>
@@ -1342,7 +1346,7 @@
     <div class="footer-inner">
       <div>
         <div class="f-name">Renan Granemann Bertoldi</div>
-        <div class="f-info">renangb@gmail.com · +55 47 99620 4114 · linkedin.com/in/renanbertoldi</div>
+        <div class="f-info">+55 47 99620 4114 · linkedin.com/in/renanbertoldi</div>
       </div>
       <div class="f-right">
         <div class="f-tag">Portfólio</div>
