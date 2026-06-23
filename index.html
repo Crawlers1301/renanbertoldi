@@ -223,20 +223,7 @@
       display: block;
     }
 
-    .scroll-hint {
-      position: absolute;
-      bottom: 44px;
-      left: 96px;
-      z-index: 2;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 9px;
-      color: var(--text-35);
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
+    .scroll-hint { display: none; }
 
     .scroll-line {
       width: 28px;
@@ -260,7 +247,7 @@
       font-family: 'Outfit', sans-serif;
       font-size: 22px;
       font-weight: 600;
-      color: var(--text);
+      color: var(--gold);
       letter-spacing: -.3px;
       margin-bottom: 52px;
     }
@@ -828,6 +815,8 @@
       .container { padding: 0 24px; }
       section { padding: 64px 0; }
       .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+      .kpi-cell { padding: 36px 24px; }
+      .kpi-num { font-size: clamp(28px, 7vw, 40px); }
       .intl-grid { grid-template-columns: 1fr; }
       .bank-logo-grid { grid-template-columns: repeat(3, 1fr); }
       .bank-logo-grid.intl-grid-banks { grid-template-columns: repeat(3, 1fr); }
