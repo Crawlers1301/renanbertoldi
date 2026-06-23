@@ -673,6 +673,119 @@
       color: var(--text-60);
     }
 
+    /* DADOS / INTELIGÊNCIA APLICADA */
+    .tools-strip {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 56px;
+    }
+
+    .tool-chip {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 18px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      transition: border-color .2s, background .2s;
+    }
+
+    .tool-chip:hover {
+      border-color: var(--gold-border);
+      background: var(--surface-hi);
+    }
+
+    .tool-chip img {
+      width: 18px;
+      height: 18px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: .50;
+      flex-shrink: 0;
+    }
+
+    .tool-chip span {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--text-35);
+      letter-spacing: .8px;
+      white-space: nowrap;
+    }
+
+    .dash-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      outline: 1px solid var(--border);
+    }
+
+    .dash-card {
+      background: var(--bg);
+      display: flex;
+      flex-direction: column;
+      transition: background .2s;
+      overflow: hidden;
+    }
+
+    .dash-card:hover { background: var(--surface); }
+
+    .dash-screenshot {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      background: var(--surface-hi);
+      position: relative;
+    }
+
+    .dash-screenshot img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+      display: block;
+      opacity: .80;
+      transition: opacity .35s, transform .45s cubic-bezier(.16,1,.3,1);
+    }
+
+    .dash-card:hover .dash-screenshot img {
+      opacity: 1;
+      transform: scale(1.025);
+    }
+
+    .dash-info {
+      padding: 20px 22px 26px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .dash-tool-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 8.5px;
+      color: var(--gold);
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
+    }
+
+    .dash-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+
+    .dash-desc {
+      font-size: 12.5px;
+      font-weight: 300;
+      color: var(--text-60);
+      line-height: 1.75;
+      margin-top: 2px;
+    }
+
     /* FOOTER */
     footer {
       border-top: 1px solid var(--border);
@@ -766,6 +879,7 @@
         padding-left: 36px;
       }
       .edu-cols { grid-template-columns: 1fr; gap: 52px; }
+      .dash-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -778,6 +892,7 @@
     <li><a href="#internacional">Internacional</a></li>
     <li><a href="#bancos">Rede Bancária</a></li>
     <li><a href="#eventos">Eventos</a></li>
+    <li><a href="#dados">Dados</a></li>
     <li><a href="#carreira">Carreira</a></li>
     <li><a href="#formacao">Formação</a></li>
   </ul>
@@ -1062,6 +1177,73 @@
           <div class="event-loc">Florianópolis</div>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- DADOS / INTELIGÊNCIA APLICADA -->
+<section id="dados">
+  <div class="container">
+    <div class="s-label fade-up">Dados &amp; Inteligência — Gestão orientada por tecnologia</div>
+
+    <div class="tools-strip fade-up d1">
+      <div class="tool-chip">
+        <img src="assets/tool-powerbi.png" alt="Power BI">
+        <span>Power BI</span>
+      </div>
+      <div class="tool-chip">
+        <img src="assets/tool-n8n.png" alt="N8N">
+        <span>N8N</span>
+      </div>
+      <div class="tool-chip">
+        <img src="assets/tool-gemini.png" alt="Gemini">
+        <span>Gemini</span>
+      </div>
+      <div class="tool-chip">
+        <img src="assets/tool-claude.png" alt="Claude">
+        <span>Claude</span>
+      </div>
+      <div class="tool-chip">
+        <img src="assets/tool-calcbank.png" alt="CalcBank">
+        <span>CalcBank</span>
+      </div>
+    </div>
+
+    <div class="dash-grid">
+
+      <div class="dash-card fade-up">
+        <div class="dash-screenshot">
+          <img src="assets/dash-desempenho.jpeg" alt="Dashboard Desempenho Corporativo">
+        </div>
+        <div class="dash-info">
+          <div class="dash-tool-tag">Power BI</div>
+          <div class="dash-title">Central de Desempenho Corporativo</div>
+          <div class="dash-desc">Indicadores-chave de gestão à vista: vendas, margem, rentabilidade e ocupação em tempo real, estruturados para decisão executiva imediata.</div>
+        </div>
+      </div>
+
+      <div class="dash-card fade-up d1">
+        <div class="dash-screenshot">
+          <img src="assets/dash-calcbank.png" alt="Gestão de Endividamento">
+        </div>
+        <div class="dash-info">
+          <div class="dash-tool-tag">CalcBank</div>
+          <div class="dash-title">Gestão de Endividamento e Captação</div>
+          <div class="dash-desc">Mapeamento de spread, garantias e custo efetivo total por banco — identificando as melhores janelas de captação e otimizando o relacionamento bancário.</div>
+        </div>
+      </div>
+
+      <div class="dash-card fade-up d2">
+        <div class="dash-screenshot">
+          <img src="assets/dash-inadimplencia.png" alt="Gestão de Inadimplência">
+        </div>
+        <div class="dash-info">
+          <div class="dash-tool-tag">Power BI</div>
+          <div class="dash-title">Gestão de Inadimplência e Crédito</div>
+          <div class="dash-desc">NPL, aging de carteira e ranking de clientes por criticidade — para calibrar políticas de crédito com precisão, em direções expansionistas ou retracionistas.</div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
