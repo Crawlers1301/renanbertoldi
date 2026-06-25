@@ -781,6 +781,139 @@
       margin-top: 4px;
     }
 
+    /* PERFIL COMPORTAMENTAL — DISC */
+    .disc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .disc-archetype {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 10px;
+      color: var(--gold);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .disc-title {
+      font-size: clamp(28px, 3vw, 42px);
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -1.5px;
+      margin-bottom: 28px;
+    }
+
+    .disc-tese {
+      font-size: 16px;
+      font-weight: 300;
+      color: var(--text-60);
+      line-height: 1.82;
+      max-width: 480px;
+      margin-bottom: 32px;
+    }
+
+    .disc-tese strong { color: var(--text); font-weight: 600; }
+
+    .disc-credit {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 9px;
+      color: var(--text-35);
+      letter-spacing: 1.5px;
+    }
+
+    .disc-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .disc-bar-row {
+      display: grid;
+      grid-template-columns: 28px 1fr 36px;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .disc-bar-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--text-60);
+      letter-spacing: 1px;
+    }
+
+    .disc-bar-track {
+      height: 3px;
+      background: var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .disc-bar-fill {
+      position: absolute;
+      left: 0; top: 0; bottom: 0;
+      background: var(--gold);
+      width: 0;
+      transition: width 1.2s cubic-bezier(.16,1,.3,1);
+    }
+
+    .disc-bar-row.vis .disc-bar-fill { width: var(--pct); }
+
+    .disc-bar-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 13px;
+      color: var(--gold);
+      text-align: right;
+    }
+
+    .disc-forces {
+      margin-top: 56px;
+      padding-top: 40px;
+      border-top: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--border);
+      outline: 1px solid var(--border);
+    }
+
+    .disc-force-cell {
+      background: var(--bg);
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .disc-force-val {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 32px;
+      font-weight: 400;
+      color: var(--gold);
+      letter-spacing: -1.5px;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .disc-force-name {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .disc-force-desc {
+      font-size: 11px;
+      color: var(--text-35);
+      line-height: 1.5;
+    }
+
+    @media (max-width: 768px) {
+      .disc-grid { grid-template-columns: 1fr; gap: 48px; }
+      .disc-forces { grid-template-columns: repeat(2, 1fr); }
+    }
+
     /* ANIMATIONS */
     .fade-up {
       opacity: 0;
@@ -855,6 +988,7 @@
     <li><a href="#bancos">Rede Bancária</a></li>
     <li><a href="#eventos">Eventos</a></li>
     <li><a href="#dados">Dados</a></li>
+    <li><a href="#perfil">Perfil</a></li>
     <li><a href="#carreira">Carreira</a></li>
     <li><a href="#formacao">Formação</a></li>
   </ul>
@@ -1224,6 +1358,75 @@
   </div>
 </section>
 
+<!-- PERFIL COMPORTAMENTAL -->
+<section id="perfil">
+  <div class="container">
+    <div class="s-label fade-up">Perfil comportamental — o DNA por trás dos resultados</div>
+
+    <div class="disc-grid">
+
+      <!-- COLUNA ESQUERDA: texto -->
+      <div class="fade-up d1">
+        <div class="disc-archetype">TTI Success Insights® · Arquétipo</div>
+        <div class="disc-title">Inspirador<br>Analítico</div>
+        <p class="disc-tese">
+          A avaliação TTI Success Insights® classifica Renan como <strong>Inspirador Analítico</strong> — combinação incomum de <strong>Influência (92)</strong> e <strong>Conformidade (81)</strong>. É o executivo financeiro que une a relação humana que <em>capta, articula e abre portas</em> ao rigor analítico que <em>estrutura, controla e mede</em>. As mesmas duas forças que sustentam, lado a lado, a captação de R$665M e a gestão orientada por dados. Perfil Natural e Adaptado idênticos (58/58): comportamento autêntico, mesmo sob pressão.
+        </p>
+        <div class="disc-credit">Norma BR Português 2021 R4 · Abril 2026</div>
+      </div>
+
+      <!-- COLUNA DIREITA: barras DISC -->
+      <div class="disc-bars fade-up d2">
+        <div class="disc-bar-row" data-pct="12">
+          <span class="disc-bar-label">D</span>
+          <div class="disc-bar-track"><div class="disc-bar-fill"></div></div>
+          <span class="disc-bar-val">12</span>
+        </div>
+        <div class="disc-bar-row" data-pct="92">
+          <span class="disc-bar-label">I</span>
+          <div class="disc-bar-track"><div class="disc-bar-fill"></div></div>
+          <span class="disc-bar-val">92</span>
+        </div>
+        <div class="disc-bar-row" data-pct="22">
+          <span class="disc-bar-label">S</span>
+          <div class="disc-bar-track"><div class="disc-bar-fill"></div></div>
+          <span class="disc-bar-val">22</span>
+        </div>
+        <div class="disc-bar-row" data-pct="81">
+          <span class="disc-bar-label">C</span>
+          <div class="disc-bar-track"><div class="disc-bar-fill"></div></div>
+          <span class="disc-bar-val">81</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORÇAS IMPULSIONADORAS -->
+    <div class="disc-forces">
+      <div class="disc-force-cell fade-up">
+        <div class="disc-force-val">100</div>
+        <div class="disc-force-name">Intencional</div>
+        <div class="disc-force-desc">Ajuda com propósito específico, não por ajudar</div>
+      </div>
+      <div class="disc-force-cell fade-up d1">
+        <div class="disc-force-val">75</div>
+        <div class="disc-force-name">Comandante</div>
+        <div class="disc-force-desc">Busca status, reconhecimento e autonomia</div>
+      </div>
+      <div class="disc-force-cell fade-up d2">
+        <div class="disc-force-val">75</div>
+        <div class="disc-force-name">Objetivo</div>
+        <div class="disc-force-desc">Foco no resultado e na funcionalidade</div>
+      </div>
+      <div class="disc-force-cell fade-up d3">
+        <div class="disc-force-val">69</div>
+        <div class="disc-force-name">Eficiente</div>
+        <div class="disc-force-desc">Retorno prático sobre tempo, energia e recursos</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 <!-- CARREIRA -->
 <section id="carreira">
   <div class="container">
@@ -1373,6 +1576,19 @@
   }, { threshold: 0.4 });
 
   document.querySelectorAll('.kpi-cell').forEach(el => kpiIO.observe(el));
+
+  const discIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const pct = e.target.dataset.pct;
+        e.target.style.setProperty('--pct', pct + '%');
+        e.target.classList.add('vis');
+        discIO.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  document.querySelectorAll('.disc-bar-row').forEach(el => discIO.observe(el));
 
   requestAnimationFrame(() => {
     document.querySelectorAll('.hero .fade-up').forEach(el => el.classList.add('vis'));
